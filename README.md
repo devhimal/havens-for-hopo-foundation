@@ -12,7 +12,7 @@ project-root/
 ├── assets/        # All image and media files
 ├── CSS/           # Stylesheets used throughout the project
 ├── js/            # JavaScript files for interactivity
-├── HTML/          # Main HTML pages of the site
+├── html/          # Main HTML pages of the site
 └── README.md      # Project documentation
 
 ```
