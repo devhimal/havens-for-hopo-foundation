@@ -32,9 +32,6 @@ project-root/
 
 ## 📚 Disclaimer
 
-This project is developed solely for educational purposes and is **not affiliated** with the real Haven for Hope Foundation.
-
----
+This project is developed solely for educational purposes and is **not affiliated** with the real Haven for Hope Foundation. 
 
 Feel free to explore and learn from the structure. Suggestions and improvements are welcome!
-```
