@@ -1,0 +1,74 @@
+/* Body styling - sets a background image and fallback background color */
+body{
+    background-image: url(../assets/MAPS.png); 
+    background-color: #FFFFF5;
+}
+
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .video video {
+    width: 80%; 
+    max-width: 1000px; 
+    height: auto; 
+  }
+
+/* Empower section - horizontal layout with vertical padding */
+.empower{
+    display: flex;
+    flex-direction: row;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+/* Empower heading - sets fixed width and space below the title */
+.empower-head h1{
+    width: 483px;
+    padding-bottom: 50px;
+}
+
+/* Empower paragraph - sets fixed width for better text readability */
+.empower-head p{
+    width: 640px;
+}
+
+/* Upcoming project section - vertically aligned and centered with spacing */
+.upcoming{
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Space between the heading and subheading */
+}
+
+/* Upcoming project main heading - centered text with bottom padding */
+.upcoming h2{
+    width: 768px;
+    text-align: center;
+    padding-bottom: 150px;
+}
+
+/* Clinic subheading - sets fixed width for h3 text */
+.clinic h3{
+    width: 250px;
+}
+
+/* Clinic paragraph - sets fixed width for paragraph content */
+.clinic p{
+    width: 638px;
+}
+
+/* Clinic section layout - horizontal layout with spacing and padding */
+.clinic{
+    padding-top: 50px ;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    align-items: center;
+}

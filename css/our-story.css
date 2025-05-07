@@ -1,0 +1,64 @@
+/* Heading 3 styles - Medium size, lighter weight serif */
+h3{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif; 
+}
+
+
+/* Our Stories section - adds padding and centers content */
+.our-stories{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+/* Individual story boxes - sets consistent width and vertical spacing */
+.story-box div{
+    padding-top: 20px;
+    width: 330px;
+    padding-bottom: 60px;
+}
+
+/* Paragraph inside story box - adds spacing above the text */
+.story-box p{
+    padding-top: 20px;
+}
+
+/* First row layout - arranges multiple story boxes in a horizontal row with spacing between them */
+.first-row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Sets a light background color for the entire page */
+body{
+    background-color: #FFFFF5;
+}
+
+input{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:#FFFFF5
+  }
+    
+
+  
+  .newsletter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 150px;
+    gap: 20px;
+  }
+  
+  .footer-wrap{
+    padding: 100px;
+  }
+  

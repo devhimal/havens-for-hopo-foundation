@@ -1,0 +1,93 @@
+/* Nepal section heading - restricts width for better layout */
+.nepal h3{
+    width: 656px;
+}
+
+.nepal img{
+
+}
+
+/* Havens section - horizontal layout with spacing and vertical centering */
+.havens{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Limits paragraph width in the Havens section for readability */
+.havens p{
+    width: 553px;
+}
+
+/* Our Team section - centers the team container */
+.our-team{
+    display: flex;
+    justify-content: center;
+}
+
+/* Team container layout - horizontal layout with spacing */
+.all-team{
+    padding-top: 74px;
+    display: flex;
+    flex-direction: row;
+    gap: 45;
+    justify-content: space-between;
+}
+
+/* Team member description - sets width and adds spacing */
+.team p{
+    width: 320px;
+    padding-top: 20px;
+    padding-bottom: 74px;
+}
+
+/* Icon arrow section - aligns icons to the right with spacing */
+.icon-arrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 40px;
+    padding-bottom: 150px;
+}
+
+/* Star section - centered column layout with bottom padding */
+.star{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+/* Centered heading with fixed width in the star section */
+.star h3{
+    width: 760px;
+    text-align: center;
+}
+
+/* Location section - centers the map and text */
+.location{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+/* Adds spacing above and below location paragraph */
+.location-content p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Adds vertical spacing to the map image */
+.map-wrap img{
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+/* Sets a light beige background for the entire page */
+body{
+    background-color: #FFFFF5;
+}

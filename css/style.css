@@ -1,0 +1,337 @@
+/* Heading 1 styles - Large, light italic serif font */
+h1 {
+    font-size: 64px;     
+    font-weight: 300;   
+    font-style: italic;   
+    font-family: "Roboto Serif", sans-serif; 
+}
+
+/* Heading 2 styles - Slightly smaller and bolder than h1, also italic serif */
+h2 {
+    font-size: 48px;     
+    font-weight: 500;   
+    font-style: italic;   
+    font-family: "Roboto Serif", sans-serif; 
+}
+
+/* Heading 3 styles - Medium size, lighter weight serif */
+h3{
+    font-size: 24px;
+    font-weight: 300;
+    font-family: "Roboto Serif", sans-serif; 
+}
+
+/* Heading 4 styles - Small and bold sans-serif */
+h4{
+    font-size: 16px;
+    font-weight: 800;
+    font-family: "Roboto", sans-serif; 
+}
+
+/* Heading 5 styles - Small and regular sans-serif */
+h5{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto Serif", sans-serif; 
+}
+
+/* Heading 6 styles - Small and bold sans-serif */
+h6{
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Roboto Serif", sans-serif; 
+}
+
+
+p{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Anchor tag - Removes underline from all links */
+a{
+    text-decoration: none;
+}
+
+/* Container class - Sets a fixed width and centers content horizontally */
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* General button styling - Rounded, clickable, and padded */
+.button {
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for all buttons */
+.button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Donate button - Orange background with dark text */
+.donate-btn {
+    background-color: #EE964B;
+    color: #262626;
+}
+.donate-btn:hover {
+    background-color: #e07b26; /* slightly darker orange on hover */
+}
+
+/* Volunteer button - Dark background with light text */
+.volunteer-btn {
+    background-color: #262626;
+    color: #EBEBD3;
+}
+
+.volunteer-btn:hover {
+    background-color: #444444; /* slightly lighter black */
+}
+
+/* Cancel button - Transparent with dark border */
+.cancel-btn {
+    background-color: transparent;
+    color: #262626;
+    border: 1px solid #262626;
+}
+.cancel-btn:hover {
+    background-color: #f0f0f0; /* light grey on hover */
+    color: #262626; /* text stays dark */
+}
+
+.readmore-btn{
+    background-color: #262626;
+    color: #EBEBD3;
+    font-family: "Roboto", sans-serif; 
+}
+
+.readmore-btn:hover {
+    background-color: #444444; /* slightly lighter black */
+}
+
+/* Navigation bar - Flexbox layout for horizontal alignment */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20PX 0;
+}
+
+nav a{
+    color: #262626;
+}
+
+
+.menu{display: block;}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #262626; /* or whatever your normal color is */
+    font-size: 18px;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.menu ul li a:hover {
+    color: #EE964B; /* Change color on hover, like a bright pop color */
+    transform: scale(1.05); /* Slight zoom/pop */
+}
+
+/* Logo container - Fixed width */
+.logo{
+    width: 200px;
+}
+
+/* Logo image - Responsive to fill container */
+.logo img{
+    width: 100%;
+}
+
+
+
+/* Menu list - Horizontal layout with spacing, removes bullets */
+.menu ul{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    list-style: none;
+}
+
+/* Horizontal rule - Styled with centered width and bottom spacing */
+hr {
+    width: 90%;
+    border: 1px solid #000000;
+    margin: 10px auto;
+    margin-bottom: 100px;
+}
+
+/* Footer wrapper - Centers the content inside the footer */
+.footer-wrap{
+    display: flex;
+    justify-content: center;
+}
+
+/* Base mobile element hiding */
+.mobile-element {
+    display: none;
+}
+
+.popup{
+    display: none;
+}
+
+
+/* Mobile styles */
+@media (max-width: 426px) {
+    /* Layout adjustments */
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Hide desktop navigation */
+    .desktop {
+        display: none;
+    }
+
+    /* Show mobile elements */
+    .mobile-element {
+        display: flex;
+    }
+
+    /* Mobile header styling */
+    .nav-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    /* Mobile menu styling (initially hidden) */
+    .nav-mobile2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60vh;
+        background: #fffff5;
+        z-index: 1000;
+        flex-direction: column;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Active state for mobile menu */
+    .nav-mobile2.active {
+        transform: translateX(0);
+        display: flex;
+    }
+
+    /* Mobile menu close button */
+    .close-donation {
+        align-self: flex-end;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #262626;
+    }
+
+    /* Mobile menu items */
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .mobile-menu li {
+        list-style: none;
+    }
+
+    .mobile-menu a {
+        font-size: 18px;
+        color: #262626;
+        text-decoration: none;
+    }
+
+    /* Logo sizing */
+    .logo {
+        width: 143px;
+    }
+
+    .logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Burger icon */
+    .burger i {
+        font-size: 20px;
+        color: #262626;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 427px) and (max-width: 768px) {
+    /* Typography Adjustments */
+    h1 {
+        font-size: 48px;
+    }
+    
+    h2 {
+        font-size: 36px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    .desktop{
+        width: 100%;
+        max-width: 740px;
+    }
+    /* Layout Adjustments */
+    .container {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Navigation */
+    .menu ul {
+        gap: 30px;
+    }
+    
+    /* Buttons */
+    .button {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+    
+    /* Mobile Menu Adjustments */
+    .nav-mobile2 {
+        width: 70%;
+    }
+    
+    /* Logo */
+    .logo {
+        width: 160px;
+    }
+}

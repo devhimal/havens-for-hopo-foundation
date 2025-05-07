@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title> HAVENS FOR HOPE </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact-us.css">
+    <link rel="stylesheet" href="../css/donation-form.css">
+</head>
+<body>
+<!-- Header Section with Navigation -->
+<header class="container">
+    <nav class="desktop">
+    <!-- Logo -->
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../assets/logo.png" >
+            </a>
+        </div>
+        <!-- Navigation Menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="../html/about-us.html">About Us</a></li>
+                <li><a href="../html/our-story.html">Our Story</a></li>
+                <li><a href="../html/resources.html">Resources</a></li>
+                <li><a href="../html/contact-us.html">Contact Us</a></li>
+                <!-- Donate Button -->
+                <a href="#" class="button donate-btn" id="donateButton">Donate now</a>
+            </ul>
+        </div>    
+    </nav>
+
+
+    <!-- mobile nav  -->
+    <nav class="nav-mobile mobile-element">
+        <!-- Logo -->
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/logo.png" >
+                </a>
+            </div>
+            <!-- Navigation Menu -->
+            <div class="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>    
+    </nav>
+
+    <!-- mobile menu  -->
+    <nav class="nav-mobile2 mobile-element">
+        <!-- Logo -->
+            <div class="logo">
+                <img src="../assets/logo.png" alt="">
+                <i class="fa-solid fa-xmark close-donation" id="close-donation"></i>
+            </div>
+            <!-- Navigation Menu -->
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="../html/about-us.html">About Us</a></li>
+                    <li><a href="../html/our-story.html">Our Story</a></li>
+                    <li><a href="../html/resources.html">Resources</a></li>
+                    <li><a href="../contact-us.html">Contact Us</a></li>
+                    <!-- Donate Button -->
+                    <a href="#" class="button donate-btn" id="donateButton">Donate now</a>
+                </ul>
+            </div>    
+    </nav>   
+</header>
+
+    <section class="hero">
+        <img src="../assets/CU_img1.png" alt="Children raising hands"/>
+    </section>
+    
+    <section class="contact-section container">
+        <div class="contact-info">
+            <h2>Contact us</h2>
+            <h6>hfh.org</h6>
+            <h6>+01-33445566</h6>
+            <h6>P62V+WXJ, Arnako marga, Kathmandu, 44600</h6>
+        </div>
+
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="input-flex">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="fname" required>
+                        <div class="error-message">Please enter your first name</div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lname" required>
+                        <div class="error-message">Please enter your last name</div>
+                    </div>
+                </div>
+                
+                <div class="input-flex">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                        <div class="error-message">Please enter a valid email</div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" required>
+                        <div class="error-message">Please enter your phone number</div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label>Choose a Topic</label>
+                    <select name="topic" required>
+                        <option value="">Select one...</option>
+                        <option value="donation">Donation</option>
+                        <option value="volunteer">Volunteering</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="error-message">Please select a topic</div>
+                </div>
+    
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="4" required></textarea>
+                    <div class="error-message">Please enter your message</div>
+                </div>
+    
+                <div class="form-group checkbox">
+                    <div>
+                        <input type="checkbox" name="terms" required> 
+                        <label>
+                            I accept the Terms
+                        </label>
+                    </div>
+                    <div class="error-message">You must accept the terms</div>
+                </div>
+    
+                <button type="submit" class="button volunteer-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Popup HTML -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup" id="popup">
+        <h3>Thank You!</h3>
+        <p>Your message has been submitted successfully.</p>
+        <button class="popup-close" id="popupClose">Close</button>
+    </div>
+    
+    <section class="newsletter">
+        <h2>Subscribe to our newsletter</h2>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email" />
+          <a href="#" class="button volunteer-btn">Sign up</a>
+        </div>
+        <p>By clicking Sign Up you're confirming that you agree with our <a href="#">Terms and Conditions</a>.</p>
+      </section>
+    
+    <footer>
+        <div class="footer-wrap">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/logo.png">
+                </a>
+            </div>
+        </div>
+        <hr>
+    </footer>
+
+<!-- Donation form popup -->
+ 
+<div class="donation-popup" id="donationPopup">
+    <div class="donation-popup-container">
+        <button class="close-donation" id="closeDonation">&times;</button>
+        <h2>Payment method</h2>
+
+        <form id="donationForm">
+            <div class="form-group">
+                <label for="name">Name on invoice</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error-message">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="card">Card number</label>
+                <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" required pattern="[\d ]{16,19}">
+                <div class="error-message">Please enter a valid card number</div>
+            </div>
+            
+            <div class="input-flex1">
+                <div class="form-group">
+                    <label for="expiry">Expiry</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/?([0-9]{2})">
+                    <div class="error-message">Please enter valid expiry date</div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required pattern="\d{3,4}">
+                    <div class="error-message">Please enter valid CVV</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <div class="error-message">Please enter a valid email</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select one...</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                </select>
+                <div class="error-message">Please select a country</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Street address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St" required>
+                <div class="error-message">Please enter your address</div>
+            </div>
+            
+            <div class="input-flex2">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="New York" required>
+                    <div class="error-message">Please enter your city</div>
+                </div>
+                <div class="form-group">
+                    <label for="state">State / Province</label>
+                    <input type="text" id="state" name="state" placeholder="NY" required>
+                    <div class="error-message">Please enter your state</div>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP / Postal code</label>
+                    <input type="text" id="zip" name="zip" placeholder="10001" required>
+                    <div class="error-message">Please enter your ZIP code</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h4>Choose your donation amount</h4>
+                <div class="donation-amounts">
+                    <div class="amount-buttons">
+                        <button type="button" data-amount="20">$20</button>
+                        <button type="button" data-amount="50">$50</button>
+                        <button type="button" data-amount="60">$60</button>
+                        <button type="button" data-amount="80">$80</button>
+                    </div>
+                    <div>
+                        <input type="number" id="customAmount" name="amount" placeholder="Custom amount" required>
+                        <div class="error-message">Please enter an amount</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" class="button cancel-btn" id="cancelDonation">Cancel</button>
+                <button type="submit" class="button volunteer-btn">Save</button>
+            </div>
+            
+            <div class="footer">
+                <div class="footer-wrap">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../assets/logo.png">
+                        </a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Thank You Popup -->
+<div class="popup" id="thankYouPopup">
+    <button class="popup-close">&times;</button>
+    <h3>Thank You for Your Donation!</h3>
+    <p>Your support helps us continue our important work.</p>
+</div>
+    
+    <!-- Overlay -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+
+    <script src="../js/donation-popup.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="../js/contact-form.js"></script>
+</body>
+</html>

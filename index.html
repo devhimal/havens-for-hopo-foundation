@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title> HAVENS FOR HOPE </title> <!-- Page title -->
+    
+    <script src="https://kit.fontawesome.com/1c4230ebe4.js"></script>
+    <!-- Google Fonts Preconnect and Font Families -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS stylesheets: reset, style and index -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/donation-form.css">
+
+</head>
+<body>
+    <!-- Header Section with Navigation -->
+    <header class="container">
+        <nav class="desktop">
+        <!-- Logo -->
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="./assets/logo.png" >
+                </a>
+            </div>
+            <!-- Navigation Menu -->
+            <div class="menu">
+                <ul>
+                    <li><a href="./html/about-us.html">About Us</a></li>
+                    <li><a href="./html/our-story.html">Our Story</a></li>
+                    <li><a href="./html/resources.html">Resources</a></li>
+                    <li><a href="./html/contact-us.html">Contact Us</a></li>
+                    <!-- Donate Button -->
+                    <a href="#" class="button donate-btn" id="donateButton">Donate now</a>
+                </ul>
+            </div>    
+        </nav>
+
+
+        <!-- mobile nav  -->
+        <nav class="nav-mobile mobile-element">
+            <!-- Logo -->
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="./assets/logo.png" >
+                    </a>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="burger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>    
+        </nav>
+
+        <!-- mobile menu  -->
+        <nav class="nav-mobile2 mobile-element">
+            <!-- Logo -->
+                <div class="logo">
+                    <img src="./assets/logo.png" alt="">
+                    <i class="fa-solid fa-xmark close-donation" id="close-donation"></i>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="mobile-menu">
+                    <ul>
+                        <li><a href="./html/about-us.html">About Us</a></li>
+                        <li><a href="./html/our-story.html">Our Story</a></li>
+                        <li><a href="./html/resources.html">Resources</a></li>
+                        <li><a href="./html/contact-us.html">Contact Us</a></li>
+                        <!-- Donate Button -->
+                        <a href="#" class="button donate-btn" id="donateButton">Donate now</a>
+                    </ul>
+                </div>    
+        </nav>
+
+        
+    </header>
+    
+    <!-- Hero Section with Call-to-Action -->
+    <section class="hero-section">
+        <div class="container">
+            <div >            
+                <h1>Together, we can create a brighter future for all.</h1>
+                <a href="./html/contact-us.html" class="button volunteer-btn">Sign up</a>
+            </div>
+            <div>
+                <img src="./assets/HP1.png" alt="Helping hands together">
+            </div>
+        </div>
+    </section>
+
+    <!-- Kindness Section with a Message and Donate Button -->
+    <section class="kindness">
+        <div class="kindness-content">
+            <h2>Your small act of kindness can spark a lifetime of change.</h2>
+            <a href="#" class="button donate-btn">Donate now</a>
+        </div>
+    </section>
+
+    <!-- Impact Statistics Section -->
+    <section class="statistics container">
+        <div>
+            <h2>Impact Statistics</h2>
+            <p>At Havens for Hope, we are dedicated to transforming lives and empowering communities. Our impact is the result of your generous support and the tireless efforts of our team. Below are the key statistics that highlight the difference we’re making together</p>
+        </div>
+        <!-- Row of Impact Images -->
+        <div class="image-row">
+            <div class="image-box">
+                <img src="./assets/IS_1.png" alt="image 1">
+                <div class="image-box-txt">
+                    <h5>People Reached</h5>
+                    <h6>12,500+ individuals supported across 30+ communities in Nepal and neighboring regions.</h6>
+                    <h6>3,000+ children enrolled in educational programs and 2,000+ individuals received health support.</h6>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img src="./assets/IS_2.png" alt="image 2">
+                <div class="image-box-txt">
+                    <h5>Program Success</h5>
+                    <h6>85% increase in literacy rates and 90% of participants report improved mental health.</h6>
+                    <h6>1,000+ families trained in self-reliance, and 750+ people employed through vocational programs.</h6>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img src="./assets/IS_3.png" alt="image 3">
+                <div class="image-box-txt">
+                    <h5>Sustainable Impact</h5>
+                    <h6>95% of communities report long-term improvements in health and well-being.</h6>
+                    <h6>50+ renewable energy projects and 100% of programs promote eco-friendly practices.</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Our Stories Section -->
+    <section class="our-stories">
+       <div>
+        <div class="os-heading">
+            <h2>Our Stories</h2>
+            <p>Where challenges end, and hope begins.</p>
+        </div>
+        <div class="women-empowerment container">
+            <div>
+                <img src="./assets/women_em.png" alt="women empowerment">
+            </div>
+            <!-- Story 1: Women Empowerment -->
+            <div class="content"> 
+                <h4>Women Empowerment</h4>
+                <h2>Breaking Barriers: Maya's Journey to Independence</h2>
+                <p>Maya, a single mother, overcame societal challenges with our psycho-social support and self-reliance training, transforming her life through entrepreneurship.</p>
+            </div>
+        </div>
+
+        <div class="women-empowerment container">
+            <!-- Story 2: Community Resilience -->
+            <div class="content"> 
+                <h4>Community Resilience</h4>
+                <h2>Rebuilding Lives After the Floods</h2>
+                <p> Bikash led his village in recovery efforts after a devastating flood, supported by our community-based relief programs.</p>
+            </div>
+            <div>
+                <img src="./assets/Community_res.png" alt="women empowerment">
+            </div>
+        </div>
+
+        <!-- Read More Button -->
+        <div class="button-wrap">
+            <a href="./html/our-story.html" class="button readmore-btn">Read more</a>
+        </div>
+       </div>
+    </section> 
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-wrap">
+            <img src="./assets/logo.png" alt="">
+        </div>
+        <hr>
+    </footer>
+
+<!-- Donation form popup -->
+ 
+<div class="donation-popup" id="donationPopup">
+    <div class="donation-popup-container">
+        <button class="close-donation" id="closeDonation">&times;</button>
+        <h2>Payment method</h2>
+
+        <form id="donationForm">
+            <div class="form-group">
+                <label for="name">Name on invoice</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error-message">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="card">Card number</label>
+                <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" required pattern="[\d ]{16,19}">
+                <div class="error-message">Please enter a valid card number</div>
+            </div>
+            
+            <div class="input-flex1">
+                <div class="form-group">
+                    <label for="expiry">Expiry</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/?([0-9]{2})">
+                    <div class="error-message">Please enter valid expiry date</div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required pattern="\d{3,4}">
+                    <div class="error-message">Please enter valid CVV</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <div class="error-message">Please enter a valid email</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select one...</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                </select>
+                <div class="error-message">Please select a country</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Street address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St" required>
+                <div class="error-message">Please enter your address</div>
+            </div>
+            
+            <div class="input-flex2">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="New York" required>
+                    <div class="error-message">Please enter your city</div>
+                </div>
+                <div class="form-group">
+                    <label for="state">State / Province</label>
+                    <input type="text" id="state" name="state" placeholder="NY" required>
+                    <div class="error-message">Please enter your state</div>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP / Postal code</label>
+                    <input type="text" id="zip" name="zip" placeholder="10001" required>
+                    <div class="error-message">Please enter your ZIP code</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h4>Choose your donation amount</h4>
+                <div class="donation-amounts">
+                    <div class="amount-buttons">
+                        <button type="button" data-amount="20">$20</button>
+                        <button type="button" data-amount="50">$50</button>
+                        <button type="button" data-amount="60">$60</button>
+                        <button type="button" data-amount="80">$80</button>
+                    </div>
+                    <div>
+                        <input type="number" id="customAmount" name="amount" placeholder="Custom amount" required>
+                        <div class="error-message">Please enter an amount</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" class="button cancel-btn" id="cancelDonation">Cancel</button>
+                <button type="submit" class="button volunteer-btn">Save</button>
+            </div>
+            
+            <div class="footer">
+                <div class="footer-wrap">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="./assets/logo.png">
+                        </a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Thank You Popup -->
+<div class="popup" id="thankYouPopup">
+    <button class="popup-close">&times;</button>
+    <h3>Thank You for Your Donation!</h3>
+    <p>Your support helps us continue our important work.</p>
+</div>
+    
+    <!-- Overlay -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+
+    <script src="./js/donation-popup.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+</body>
+</html>

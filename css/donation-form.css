@@ -1,0 +1,198 @@
+/* DONATION POPUP STYLES */
+
+/* Popup Container */
+.donation-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffff5;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.donation-popup-container {
+    background-image: url(../assets/donation\ sign.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+/* Close Button */
+.close-donation {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.875rem;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: transparent;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2a7f62;
+    outline: none;
+}
+
+/* Layout Groups */
+.input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-group .form-group {
+    flex: 1;
+}
+
+/* Donation Amount Section */
+.donation-amounts {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.amount-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.amount-buttons button {
+    background: transparent;
+    border: 1px solid #262626;
+    color: #262626;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+    min-width: 60px;
+    text-align: center;
+}
+
+.amount-buttons button:hover,
+.amount-buttons button.active {
+    background: #2a7f62;
+    color: white;
+    border-color: #2a7f62;
+}
+
+.donation-amounts input {
+    width: 160px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Action Buttons */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Error Messages */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.invalid .error-message {
+    display: block;
+}
+
+.form-group.invalid input,
+.form-group.invalid select {
+    border-color: #ff4444;
+}
+
+
+.footer{
+    padding-top: 80px;
+}
+/* Footer */
+.popup-footer {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+/* ====================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ====================== */
+@media (max-width: 426px) {
+    .donation-popup {
+        padding: 20px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .donation-amounts {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .amount-buttons {
+        justify-content: space-between;
+    }
+    
+    .amount-buttons button {
+        flex: 1;
+        padding: 10px 5px;
+    }
+    
+    .donation-amounts input {
+        width: 100%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .button {
+        width: 100%;
+    }
+}
