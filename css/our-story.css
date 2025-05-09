@@ -1,64 +1,174 @@
 /* Heading 3 styles - Medium size, lighter weight serif */
-h3{
-    font-size: 24px;
-    font-weight: 700;
-    font-family: "Roboto", sans-serif; 
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
 }
-
 
 /* Our Stories section - adds padding and centers content */
-.our-stories{
-    padding-top: 100px;
-    padding-bottom: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.our-stories {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- 
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding-inline: 20px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.story-box {
+  img {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: fill;
+    object-position: center;
+  }
+}
+
 /* Individual story boxes - sets consistent width and vertical spacing */
-.story-box div{
-    padding-top: 20px;
-    width: 330px;
-    padding-bottom: 60px;
+.story-box div {
+  padding-top: 20px;
+  width: 330px;
+  padding-bottom: 60px;
 }
 
 /* Paragraph inside story box - adds spacing above the text */
-.story-box p{
-    padding-top: 20px;
+.story-box p {
+  padding-top: 20px;
 }
 
 /* First row layout - arranges multiple story boxes in a horizontal row with spacing between them */
-.first-row{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.first-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 /* Sets a light background color for the entire page */
-body{
-    background-color: #FFFFF5;
+body {
+  background-color: #fffff5;
 }
 
-input{
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color:#FFFFF5
-  }
-    
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fffff5;
+}
 
-  
-  .newsletter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 150px;
-    gap: 20px;
-  }
-  
-  .footer-wrap{
-    padding: 100px;
-  }
-  
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+  gap: 20px;
+}
+
+.footer-wrap {
+  padding: 100px;
+}
+
+/* Add these styles to your existing CSS */
+.admin-panel {
+  padding: 20px;
+  text-align: right;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.story-popup-content {
+  position: relative;
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+.close-popup {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.story-box {
+  position: relative;
+}
+
+.story-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.story-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

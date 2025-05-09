@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Story Management</title>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/1c4230ebe4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/admin-stories.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <img src="../assets/logo.png" alt="Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" class="active"
+                ><i class="fas fa-book-open"></i> Stories</a
+              >
+            </li>
+            <li>
+              <a href="../html/our-story.html"
+                ><i class="fas fa-eye"></i> View Site</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header>
+          <h1>Story Management</h1>
+          <div class="user-info">
+            <span id="currentDateTime"></span>
+            <span class="user"><i class="fas fa-user"></i> devhimal</span>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <div class="actions">
+            <button id="addStoryBtn" class="btn-primary">
+              <i class="fas fa-plus"></i> Add New Story
+            </button>
+          </div>
+
+          <div class="stories-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="storiesTableBody">
+                <!-- Stories will be populated here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story Form Modal -->
+    <div id="storyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add New Story</h2>
+          <span class="close">&times;</span>
+        </div>
+        <form id="storyForm">
+          <input type="hidden" id="storyId" />
+          <div class="form-group">
+            <label for="title">Story Title</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="author">Author Name</label>
+            <input type="text" id="author" name="author" required />
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="text" id="date" name="date" readonly />
+          </div>
+
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input type="url" id="imageUrl" name="imageUrl" required />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Story Description</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn-primary">Save Story</button>
+            <button type="button" class="btn-secondary" id="cancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/admin-stories.js"></script>
+  </body>
+</html>
