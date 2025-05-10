@@ -32,9 +32,10 @@
           <ul>
             <li>
               <a href="#" class="active"
-                ><i class="fas fa-book-open"></i> Stories</a
+                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
               >
             </li>
+
             <li>
               <a href="../html/our-story.html"
                 ><i class="fas fa-eye"></i> View Site</a
@@ -47,37 +48,74 @@
         </nav>
       </div>
 
-      <!-- Main Content -->
-      <div class="main-content">
-        <header>
-          <h1>Story Management</h1>
-          <div class="user-info">
-            <span id="currentDateTime"></span>
-            <span class="user"><i class="fas fa-user"></i> devhimal</span>
-          </div>
-        </header>
+      <div class="main-content-wrapper">
+        <!-- Main Content -->
+        <div class="main-content">
+          <header>
+            <h1>Story Management</h1>
+            <div class="user-info">
+              <span id="currentDateTime"></span>
+              <span class="user"><i class="fas fa-user"></i> admin</span>
+            </div>
+          </header>
 
-        <div class="content-area">
-          <div class="actions">
-            <button id="addStoryBtn" class="btn-primary">
-              <i class="fas fa-plus"></i> Add New Story
-            </button>
-          </div>
+          <div class="content-area">
+            <div class="actions">
+              <button id="addStoryBtn" class="btn-primary">
+                <i class="fas fa-plus"></i> Add New Story
+              </button>
+            </div>
 
-          <div class="stories-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Date</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody id="storiesTableBody">
-                <!-- Stories will be populated here -->
-              </tbody>
-            </table>
+            <div class="stories-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="storiesTableBody">
+                  <!-- Stories will be populated here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- for donation -->
+        <!-- Main Content -->
+        <div class="main-content">
+          <header>
+            <h1>Donation Management</h1>
+          </header>
+
+          <div class="content-area">
+            <div class="actions">
+              <p id="addStoryBtn">
+                You can explore the list of donation lists made by our supports.
+              </p>
+            </div>
+
+            <div class="stories-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>FullName</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>State/Province</th>
+                    <th>Donation Amout</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="donationTableBody">
+                  <!-- Stories will be populated here -->
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -104,7 +142,7 @@
 
           <div class="form-group">
             <label for="date">Date</label>
-            <input type="text" id="date" name="date" readonly />
+            <input type="date" id="date" name="date" />
           </div>
 
           <div class="form-group">

@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all elements
+document.addEventListener('DOMContentLoaded', function () {
+    // DOM Elements
     const donateButtons = document.querySelectorAll('.donate-btn');
     const donationPopup = document.getElementById('donationPopup');
     const thankYouPopup = document.getElementById('thankYouPopup');
@@ -11,87 +11,160 @@ document.addEventListener('DOMContentLoaded', function() {
     const customAmount = document.getElementById('customAmount');
     const popupCloseButtons = document.querySelectorAll('.popup-close');
 
+    // Initialize localStorage for donations
+    const donationsKey = 'donations';
+    let donations = JSON.parse(localStorage.getItem(donationsKey)) || [];
+
     // Open donation popup when any donate button is clicked
     donateButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
-            donationPopup.style.display = 'block';
-            popupOverlay.style.display = 'block';
+            openPopup(donationPopup);
         });
     });
 
     // Close donation popup
     function closeDonationPopup() {
-        donationPopup.style.display = 'none';
+        closePopup(donationPopup);
+    }
+
+    // Open a popup
+    function openPopup(popup) {
+        popup.style.display = 'block';
+        popupOverlay.style.display = 'block';
+    }
+
+    // Close a popup
+    function closePopup(popup) {
+        popup.style.display = 'none';
         popupOverlay.style.display = 'none';
     }
 
-    if (closeDonation) {
-        closeDonation.addEventListener('click', closeDonationPopup);
-    }
+    // Add event listeners to close buttons
+    [closeDonation, cancelDonation].forEach(button => {
+        if (button) {
+            button.addEventListener('click', closeDonationPopup);
+        }
+    });
 
-    if (cancelDonation) {
-        cancelDonation.addEventListener('click', closeDonationPopup);
-    }
-
-    // Amount selection
+    // Handle amount selection
     amountButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             amountButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             customAmount.value = this.getAttribute('data-amount');
         });
     });
 
-    // Custom amount focus
-    customAmount.addEventListener('focus', function() {
+    customAmount.addEventListener('focus', function () {
         amountButtons.forEach(btn => btn.classList.remove('active'));
     });
 
     // Form submission
     if (donationForm) {
-        donationForm.addEventListener('submit', function(e) {
+        donationForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Validate form
-            let isValid = true;
-            const requiredFields = this.querySelectorAll('[required]');
-            
-            requiredFields.forEach(field => {
-                const formGroup = field.closest('.form-group');
-                if (!field.value) {
-                    formGroup.classList.add('invalid');
-                    isValid = false;
-                } else {
-                    formGroup.classList.remove('invalid');
-                }
-            });
+
+            const isValid = validateForm(this);
 
             if (isValid) {
-                // Show thank you popup
-                thankYouPopup.style.display = 'block';
-                // Close donation popup
+                saveDonationToLocalStorage(this);
+                openPopup(thankYouPopup);
                 closeDonationPopup();
-                // Reset form
-                this.reset();
-                amountButtons.forEach(btn => btn.classList.remove('active'));
+                resetForm();
             }
         });
     }
 
-    // Close popups
+    // Form validation
+    function validateForm(form) {
+        let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+        const customAmountValue = customAmount.value.trim();
+
+        requiredFields.forEach(field => {
+            const formGroup = field.closest('.form-group');
+            if (!field.value.trim()) {
+                formGroup.classList.add('invalid');
+                showError(formGroup, 'This field is required.');
+                isValid = false;
+            } else {
+                formGroup.classList.remove('invalid');
+                hideError(formGroup);
+            }
+        });
+
+        if (customAmountValue && isNaN(customAmountValue)) {
+            const formGroup = customAmount.closest('.form-group');
+            formGroup.classList.add('invalid');
+            showError(formGroup, 'Please enter a valid number.');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    // Save form data to localStorage
+    function saveDonationToLocalStorage(form) {
+        const donationData = {
+            id: Date.now(),
+            name: form.querySelector('#name').value.trim(),
+            card: form.querySelector('#card').value.trim(),
+            expiry: form.querySelector('#expiry').value.trim(),
+            cvv: form.querySelector('#cvv').value.trim(),
+            email: form.querySelector('#email').value.trim(),
+            country: form.querySelector('#country').value,
+            address: form.querySelector('#address').value.trim(),
+            city: form.querySelector('#city').value.trim(),
+            state: form.querySelector('#state').value.trim(),
+            zip: form.querySelector('#zip').value.trim(),
+            amount: form.querySelector('#customAmount').value.trim(),
+            date: new Date().toISOString()
+        };
+
+        donations.push(donationData);
+        localStorage.setItem(donationsKey, JSON.stringify(donations));
+        alert("Thank you so much for the donation, your donation is recorded successfully.", donationData)
+
+    }
+
+    function showError(formGroup, message) {
+        let error = formGroup.querySelector('.error-message');
+        if (!error) {
+            error = document.createElement('div');
+            error.className = 'error-message';
+            formGroup.appendChild(error);
+        }
+        error.textContent = message;
+    }
+
+    function hideError(formGroup) {
+        const error = formGroup.querySelector('.error-message');
+        if (error) {
+            error.remove();
+        }
+    }
+
+    function resetForm() {
+        donationForm.reset();
+        amountButtons.forEach(btn => btn.classList.remove('active'));
+        customAmount.value = '';
+        const formGroups = donationForm.querySelectorAll('.form-group');
+        formGroups.forEach(group => {
+            group.classList.remove('invalid');
+            hideError(group);
+        });
+    }
+
     popupCloseButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const popup = this.closest('.popup');
-            popup.style.display = 'none';
-            popupOverlay.style.display = 'none';
+            closePopup(popup);
         });
     });
 
-    // Close when clicking overlay
-    popupOverlay.addEventListener('click', function() {
-        donationPopup.style.display = 'none';
-        thankYouPopup.style.display = 'none';
-        this.style.display = 'none';
+    popupOverlay.addEventListener('click', function () {
+        closePopup(donationPopup);
+        closePopup(thankYouPopup);
     });
 });

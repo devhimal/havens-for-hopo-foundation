@@ -6,10 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const cancelBtn = document.getElementById('cancelBtn');
   const storyForm = document.getElementById('storyForm');
   const storiesTableBody = document.getElementById('storiesTableBody');
+  const donationTableBody = document.getElementById('donationTableBody');
   const currentDateTimeElement = document.getElementById('currentDateTime');
 
   // Initialize stories from localStorage
   let stories = JSON.parse(localStorage.getItem('stories')) || [];
+  let donations = JSON.parse(localStorage.getItem('donations')) || [];
+
+  console.log(donations)
+
 
   // Update current date time
   function updateDateTime() {
@@ -60,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
       date: document.getElementById('date').value,
       imageUrl: document.getElementById('imageUrl').value,
       description: document.getElementById('description').value,
-      createdBy: 'devhimal',
+      createdBy: 'admin',
       createdAt: updateDateTime()
     };
 
@@ -104,6 +109,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function displayDonation() {
+    donationTableBody.innerHTML = '';
+
+    donations.forEach(donation => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+                <td>${donation.name}</td>
+                <td>${donation.email}</td>
+                <td>${donation.country}</td>
+                <td>${donation.city}</td>
+                <td>${donation.state}</td>
+                <td>${donation.amount}</td>
+                <td>
+                    <button onclick="editDonation(${donation.id})" class="action-btn edit-btn">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button onclick="deleteDonation(${donation.id})" class="action-btn delete-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+      `;
+      donationTableBody.appendChild(row);
+    })
+
+  }
+
+
+  displayDonation();
+
+
+
+  window.editDonation = function (id) {
+
+    alert("You can't edit the donor details as  " + id + " is not implemented yet.");
+
+
+  };
+
+  window.deleteDonation = function (id) {
+    if (confirm('Are you sure you want to delete this donation?')) {
+      donations = donations.filter(donation => donation.id !== id);
+      localStorage.setItem('donations', JSON.stringify(donations));
+      displayDonation();
+      showNotification('Donation deleted successfully!');
+    }
+  };
+
+
+
   // Edit story
   window.editStory = function (id) {
     const story = stories.find(s => s.id === id);
@@ -121,14 +175,21 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // Delete story
-  window.deleteStory = function (id) {
-    if (confirm('Are you sure you want to delete this story?')) {
-      stories = stories.filter(story => story.id !== id);
-      localStorage.setItem('stories', JSON.stringify(stories));
-      displayStories();
-      showNotification('Story deleted successfully!');
-    }
-  };
+  try {
+    window.deleteStory = function (id) {
+      console.log('Before deletion:', stories);
+      if (confirm('Are you sure you want to delete this story?')) {
+        stories = stories.filter(story => story.id !== Number(id));
+        localStorage.setItem('stories', JSON.stringify(stories));
+        if (typeof displayStories === 'function') displayStories();
+        if (typeof showNotification === 'function') showNotification('Story deleted successfully!');
+      }
+      console.log('After deletion:', stories);
+    };
+  } catch (err) {
+    console.error('Error deleting story:', err);
+  }
+
 
   // Show notification
   function showNotification(message) {

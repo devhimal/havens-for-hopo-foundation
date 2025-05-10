@@ -19,6 +19,10 @@
   padding: 20px 0;
 }
 
+.main-content-wrapper {
+  width: 100%;
+}
+
 .logo {
   text-align: center;
   padding: 20px;
