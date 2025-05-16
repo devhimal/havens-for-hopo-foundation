@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const donationTableBody = document.getElementById('donationTableBody');
   const currentDateTimeElement = document.getElementById('currentDateTime');
 
+
+
   // Initialize stories from localStorage
   let stories = JSON.parse(localStorage.getItem('stories')) || [];
   let donations = JSON.parse(localStorage.getItem('donations')) || [];
 
   console.log(donations)
-
 
   // Update current date time
   function updateDateTime() {

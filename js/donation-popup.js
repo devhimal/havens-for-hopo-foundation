@@ -163,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    popupOverlay.addEventListener('click', function () {
-        closePopup(donationPopup);
-        closePopup(thankYouPopup);
-    });
+    // popupOverlay.addEventListener('click', function () {
+    //     closePopup(donationPopup);
+    //     closePopup(thankYouPopup);
+    // });
 });
